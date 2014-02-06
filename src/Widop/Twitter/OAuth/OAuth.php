@@ -237,7 +237,7 @@ class OAuth
             $request->getUrl(),
             $request->getHeaders(),
             $request->getPostParameters()
-        )->getBody();
+        );
 
         return $this->createBearerToken($response);
     }
@@ -259,7 +259,7 @@ class OAuth
             $request->getUrl(),
             $request->getHeaders(),
             $request->getPostParameters()
-        )->getBody();
+        );
 
         $result = json_decode($response, true);
 
@@ -298,7 +298,7 @@ class OAuth
                 return $this->httpAdapter->getContent(
                     $request->getUrl(),
                     $request->getHeaders()
-                )->getBody();
+                );
 
             case OAuthRequest::METHOD_POST:
                 $postParameters = array();
@@ -311,7 +311,7 @@ class OAuth
                     $request->getHeaders(),
                     $postParameters,
                     $request->getFileParameters()
-                )->getBody();
+                );
 
             default:
                 throw new \RuntimeException(sprintf(
