@@ -161,7 +161,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
 
     public function testGetRequestTokenWithoutCallback()
     {
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->once())
             ->method('getBody')
@@ -197,7 +197,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
 
     public function testGetRequestTokenWithCallback()
     {
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->once())
             ->method('getBody')
@@ -267,7 +267,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
 
     public function testGetAccessToken()
     {
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->once())
             ->method('getBody')
@@ -307,7 +307,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetBearerTokenWithBadAdapterReturn()
     {
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->any())
             ->method('getBody')
@@ -328,7 +328,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
 
     public function testGetBearerToken()
     {
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->once())
             ->method('getBody')
@@ -361,7 +361,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
             ->method('getValue')
             ->will($this->returnValue('token'));
 
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->once())
             ->method('getBody')
@@ -395,7 +395,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
             ->method('getValue')
             ->will($this->returnValue('token'));
 
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->once())
             ->method('getBody')
@@ -432,7 +432,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
             ->method('getHeaders')
             ->will($this->returnValue(array('header' => 'foo')));
 
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->once())
             ->method('getBody')
@@ -475,7 +475,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
             ->method('getFileParameters')
             ->will($this->returnValue(array('file' => 'baz')));
 
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->once())
             ->method('getBody')
@@ -516,7 +516,7 @@ class OAuthTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetRequestTokenError()
     {
-        $response = $this->getMock('Widop\HttpAdapter\Response', array('getBody'));
+        $response = $this->getMock('Widop\HttpAdapter\HttpResponse', array('getBody'), array('http://localhost', array(), ''));
         $response
             ->expects($this->any())
             ->method('getBody')
